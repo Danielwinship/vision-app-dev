@@ -27,11 +27,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BT-nY-10r">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-hr-NR0">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-hr-NR0" customClass="RoundedShadowView" customModule="vision_app_dev" customModuleProvider="target">
                                         <rect key="frame" x="20" y="30" width="335" height="60"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-wf-sv3">
-                                                <rect key="frame" x="17.5" y="8" width="300" height="32"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-wf-sv3">
+                                                <rect key="frame" x="17.5" y="8" width="300" height="42"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The names of items captured will appear here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="sCb-TW-Owi">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
@@ -40,7 +40,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONFIDENCE " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrZ-Y3-peP">
-                                                        <rect key="frame" x="8" y="20" width="284" height="12"/>
+                                                        <rect key="frame" x="8" y="30" width="284" height="12"/>
                                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                             <constraint firstItem="8zE-wf-sv3" firstAttribute="centerX" secondItem="Mu5-hr-NR0" secondAttribute="centerX" id="mFV-Kx-adS"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTp-lA-a29">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTp-lA-a29" customClass="RoundedShadowButton" customModule="vision_app_dev" customModuleProvider="target">
                                         <rect key="frame" x="20" y="615" width="100" height="32"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -71,7 +71,7 @@
                                             <color key="titleColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-jh-GJC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-jh-GJC" customClass="RoundedShadowImageView" customModule="vision_app_dev" customModuleProvider="target">
                                         <rect key="frame" x="285" y="519" width="70" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="Ssm-lw-wtQ"/>
@@ -106,6 +106,7 @@
                         <outlet property="confidenceLabel" destination="JrZ-Y3-peP" id="tHg-bb-Cmf"/>
                         <outlet property="flashButton" destination="JTp-lA-a29" id="NoP-wa-Rdd"/>
                         <outlet property="identificationLabel" destination="sCb-TW-Owi" id="UhW-L1-l1B"/>
+                        <outlet property="roundedLabelView" destination="Mu5-hr-NR0" id="9oP-6y-q6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
