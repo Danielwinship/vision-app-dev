@@ -27,6 +27,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BT-nY-10r">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-3D-GlW">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4J2-fn-Qkp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-hr-NR0" customClass="RoundedShadowView" customModule="vision_app_dev" customModuleProvider="target">
                                         <rect key="frame" x="20" y="30" width="335" height="60"/>
                                         <subviews>
@@ -60,17 +68,6 @@
                                             <constraint firstItem="8zE-wf-sv3" firstAttribute="centerX" secondItem="Mu5-hr-NR0" secondAttribute="centerX" id="mFV-Kx-adS"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTp-lA-a29" customClass="RoundedShadowButton" customModule="vision_app_dev" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="615" width="100" height="32"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Tp1-PI-A3h"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
-                                        <state key="normal" title="FLASH OFF">
-                                            <color key="titleColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-jh-GJC" customClass="RoundedShadowImageView" customModule="vision_app_dev" customModuleProvider="target">
                                         <rect key="frame" x="285" y="519" width="70" height="128"/>
                                         <constraints>
@@ -78,20 +75,38 @@
                                             <constraint firstAttribute="width" constant="70" id="qBz-Ug-dgi"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTp-lA-a29" customClass="RoundedShadowButton" customModule="vision_app_dev" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="615" width="120" height="32"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Tp1-PI-A3h"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                        <state key="normal" title="FLASH OFF">
+                                            <color key="titleColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flashBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="njh-BK-1tL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="JTp-lA-a29" firstAttribute="leading" secondItem="4BT-nY-10r" secondAttribute="leading" constant="20" id="41j-pm-lFD"/>
-                                    <constraint firstAttribute="trailing" secondItem="Mu5-hr-NR0" secondAttribute="trailing" constant="20" id="781-iw-XUU"/>
-                                    <constraint firstItem="Mu5-hr-NR0" firstAttribute="leading" secondItem="4BT-nY-10r" secondAttribute="leading" constant="20" id="7a6-5d-9hI"/>
-                                    <constraint firstAttribute="bottom" secondItem="JTp-lA-a29" secondAttribute="bottom" constant="20" id="G0I-dn-btK"/>
-                                    <constraint firstAttribute="trailing" secondItem="ysC-jh-GJC" secondAttribute="trailing" constant="20" id="aLW-zq-ylM"/>
-                                    <constraint firstAttribute="bottom" secondItem="ysC-jh-GJC" secondAttribute="bottom" constant="20" id="e9h-OU-628"/>
-                                    <constraint firstItem="Mu5-hr-NR0" firstAttribute="top" secondItem="4BT-nY-10r" secondAttribute="top" constant="30" id="njQ-3W-Kkk"/>
+                                    <constraint firstAttribute="trailing" secondItem="4J2-fn-Qkp" secondAttribute="trailing" id="0YC-7Z-uNo"/>
+                                    <constraint firstAttribute="bottom" secondItem="4J2-fn-Qkp" secondAttribute="bottom" id="9nN-Xi-Zt9"/>
+                                    <constraint firstAttribute="bottom" secondItem="ysC-jh-GJC" secondAttribute="bottom" constant="20" id="I17-FQ-SdJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ysC-jh-GJC" secondAttribute="trailing" constant="20" id="K9q-nE-mh1"/>
+                                    <constraint firstItem="Mu5-hr-NR0" firstAttribute="leading" secondItem="4BT-nY-10r" secondAttribute="leading" constant="20" id="U4P-ge-7nh"/>
+                                    <constraint firstAttribute="bottom" secondItem="JTp-lA-a29" secondAttribute="bottom" constant="20" id="UQe-1c-tsW"/>
+                                    <constraint firstItem="4J2-fn-Qkp" firstAttribute="leading" secondItem="4BT-nY-10r" secondAttribute="leading" id="VUO-U1-Ri4"/>
+                                    <constraint firstAttribute="top" secondItem="4J2-fn-Qkp" secondAttribute="top" id="liq-SP-gso"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mu5-hr-NR0" secondAttribute="trailing" constant="20" id="n0Y-ay-Ail"/>
+                                    <constraint firstItem="JTp-lA-a29" firstAttribute="leading" secondItem="4BT-nY-10r" secondAttribute="leading" constant="20" id="pjY-Xp-rSN"/>
+                                    <constraint firstItem="Mu5-hr-NR0" firstAttribute="top" secondItem="4BT-nY-10r" secondAttribute="top" constant="30" id="x32-iZ-zxj"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4BT-nY-10r" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9bJ-S7-esu"/>
                             <constraint firstItem="4BT-nY-10r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZXD-cd-C9T"/>
@@ -101,12 +116,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="camerView" destination="4BT-nY-10r" id="d8T-8b-zcm"/>
+                        <outlet property="cameraView" destination="4J2-fn-Qkp" id="tuA-dq-Qx4"/>
                         <outlet property="captureImageView" destination="ysC-jh-GJC" id="O63-oh-ppI"/>
                         <outlet property="confidenceLabel" destination="JrZ-Y3-peP" id="tHg-bb-Cmf"/>
                         <outlet property="flashButton" destination="JTp-lA-a29" id="NoP-wa-Rdd"/>
                         <outlet property="identificationLabel" destination="sCb-TW-Owi" id="UhW-L1-l1B"/>
                         <outlet property="roundedLabelView" destination="Mu5-hr-NR0" id="9oP-6y-q6g"/>
+                        <outlet property="spinner" destination="RcG-3D-GlW" id="4kG-IL-WZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
